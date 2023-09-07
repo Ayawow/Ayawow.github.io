@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple DOM example</title>
+
+    <style>
+        .highlight {
+            color: white;
+            background-color: black;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <img src="../images/dinosaur.png"
+            alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+        <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+    </section>
+
+
+    <script>
+        const link = document.querySelector("a");
+        link.textContent = "Mozilla Developer Network";
+        link.href = "https://developer.mozilla.org";
+        //现在用 Document.createElement() 创建一个新的段落，用与之前相同的方法赋予相同的文本
+        const sect = document.querySelector("section");
+        const para = document.createElement("p");
+        para.textContent = "We hope you enjoyed the ride.";
+        //现在可以用 Node.appendChild() 方法在后面追加新的段落
+        sect.appendChild(para);
+        //添加文本节点
+        const text = document.createTextNode(
+            " — the premier source for web development knowledge.",
+        );
+        //获取内部连接的段落的引用，并把文本节点附加到这个节点上
+        const linkPara = document.querySelector("p");
+        linkPara.appendChild(text);
+        //将链接移动至section底部
+        sect.appendChild(linkPara);
+        //删除
+        sect.removeChild(linkPara); //等同于linkPara.parentNode.removeChild(linkPara);
+
+        //现在我们改为使用 HTML 操作的常用方法——Element.setAttribute()——它接受两个参数：想在元素上设置的属性、要为它设置的值。在这种情况下，我们在段落中设置类名为 highlight：
+        para.setAttribute("class", "highlight");
+
+
+
+
+    </script>
+</body>
+
+</html>

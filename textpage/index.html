@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>二次元俱乐部</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe" rel="stylesheet" />
+    <link href="../styles/style.css" rel="stylesheet" />
+
+    <style>
+        .form input[type="number"] {
+            width: 200px;
+        }
+
+        .lastResult {
+            color: white;
+            padding: 3px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <!-- 本站所有网页的统一主标题 -->
+        <img src="../images/log120.jpg">
+    </header>
+
+    <nav>
+        <!-- 本站统一的导航栏 -->
+        <ul>
+            <li><a href="../index.html">主页</a></li>
+            <li><a href="./GuessNumb.html">猜字游戏</a></li>
+            <li><a href="./If.html">条件</a></li>
+            <li><a href="./Click.html">点击产生随机颜色色块</a></li>
+
+            <!-- 共 n 个导航栏项目，省略…… -->
+        </ul>
+
+        <form>
+            <!-- 搜索栏是站点内导航的一个非线性的方式。 -->
+
+        </form>
+    </nav>
+
+    <main>
+        <!-- 网页主体内容 -->
+        <article>
+            <!-- 此处包含一个 article（一篇文章），内容略…… -->
+
+            <h1>Number guessing game</h1>
+
+            <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll
+                tell you if your guess was too high or too low.</p>
+
+            <div class="form">
+                <label for="guessField">Enter a guess: </label>
+                <input type="number" min="1" max="100" required id="guessField" class="guessField">
+                <input type="submit" value="Submit guess" class="guessSubmit">
+            </div>
+
+            <div class="resultParas">
+                <p class="guesses"></p>
+                <p class="lastResult"></p>
+                <p class="lowOrHi"></p>
+            </div>
+
+            <div class="wrapperfloat">
+                <div class="boxfloat">Float</div>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus
+                    aliquam dolor, eu lacinia lorem placerat vulputate.
+                </p>
+                <p>
+                    Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet
+                    orci vel, viverra egestas ligula. Curabitur vehicula tellus neque, ac ornare
+                    ex malesuada et. In vitae convallis lacus. Aliquam erat volutpat. Suspendisse
+                    ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis
+                    ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo et
+                    a urna. Ut id ornare felis, eget fermentum sapien.
+                </p>
+
+                <p>
+                    Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada
+                    ultrices. Phasellus turpis est, posuere sit amet dapibus ut, facilisis sed
+                    est. Nam id risus quis ante semper consectetur eget aliquam lorem. Vivamus
+                    tristique elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus
+                    sed lobortis finibus. Vivamus eu urna eget velit cursus viverra quis
+                    vestibulum sem. Aliquam tincidunt eget purus in interdum. Cum sociis natoque
+                    penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
+
+            </div>
+
+            <div class="position">
+                <h1>Sticky positioning</h1>
+
+                <dl>
+                    <dt>A</dt>
+                    <dd>Apple</dd>
+                    <dd>Ant</dd>
+                    <dd>Altimeter</dd>
+                    <dd>Airplane</dd>
+                    <dt>B</dt>
+                    <dd>Bird</dd>
+                    <dd>Buzzard</dd>
+                    <dd>Bee</dd>
+                    <dd>Banana</dd>
+                    <dd>Beanstalk</dd>
+                    <dt>C</dt>
+                    <dd>Calculator</dd>
+                    <dd>Cane</dd>
+                    <dd>Camera</dd>
+                    <dd>Camel</dd>
+                    <dt>D</dt>
+                    <dd>Duck</dd>
+                    <dd>Dime</dd>
+                    <dd>Dipstick</dd>
+                    <dd>Drone</dd>
+                    <dt>E</dt>
+                    <dd>Egg</dd>
+                    <dd>Elephant</dd>
+                    <dd>Egret</dd>
+                </dl>
+
+            </div>
+
+        </article>
+
+        <aside>
+            <!-- 侧边栏在主内容右侧 -->
+            <h2>相关链接</h2>
+            <ul>
+                <li><a href="./GuessNumb.html">这是一个超链接</a></li>
+                <!-- 侧边栏有 n 个超链接，略略略…… -->
+            </ul>
+
+        </aside>
+
+        <div class="container">
+            <div class="box">
+                One
+            </div>
+            <div class="box">
+                Two
+            </div>
+            <div class="box">
+                Three
+            </div>
+            <div class="box">
+                fore
+            </div>
+            <div class="box">
+                five
+            </div>
+            <div class="box">
+                six
+            </div>
+        </div>
+
+    </main>
+
+
+    <footer>
+        <!-- 本站所有网页的统一页脚 -->
+        <p>© 2050 某某保留所有权利</p>
+    </footer>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        const guesses = document.querySelector(".guesses");
+        const lastResult = document.querySelector(".lastResult");
+        const lowOrHi = document.querySelector(".lowOrHi");
+
+        const guessSubmit = document.querySelector(".guessSubmit");
+        const guessField = document.querySelector(".guessField");
+
+        let guessCount = 1;
+        let resetButton;
+
+
+
+
+        function checkGuess() {
+            const userGuess = Number(guessField.value);
+            if (guessCount === 1) {
+                guesses.textContent = "Previous guesses: ";
+            }
+            guesses.textContent += `${userGuess} `;
+
+            if (userGuess === randomNumber) {
+                lastResult.textContent = "Congratulations! You got it right!";
+                lastResult.style.backgroundColor = "green";
+                lowOrHi.textContent = "";
+                setGameOver();
+            } else if (guessCount === 10) {
+                lastResult.textContent = "!!!GAME OVER!!!";
+                lowOrHi.textContent = "";
+                setGameOver();
+            } else {
+                lastResult.textContent = "Wrong!";
+                lastResult.style.backgroundColor = "red";
+                if (userGuess < randomNumber) {
+                    lowOrHi.textContent = "Last guess was too low!";
+                } else if (userGuess > randomNumber) {
+                    lowOrHi.textContent = "Last guess was too high!";
+                }
+            }
+
+            guessCount++;
+            guessField.value = "";
+            guessField.focus();
+        }
+
+        guessSubmit.addEventListener("click", checkGuess);
+
+        function setGameOver() {
+            guessField.disabled = true;
+            guessSubmit.disabled = true;
+            resetButton = document.createElement("button");
+            resetButton.textContent = "Start new game";
+            document.body.appendChild(resetButton);
+            resetButton.addEventListener("click", resetGame);
+        }
+
+
+        function resetGame() {
+            guessCount = 1;
+
+            const resetParas = document.querySelectorAll(".resultParas p");
+            for (const resetPara of resetParas) {
+                resetPara.textContent = "";
+            }
+
+            resetButton.parentNode.removeChild(resetButton);
+
+            guessField.disabled = false;
+            guessSubmit.disabled = false;
+            guessField.value = "";
+            guessField.focus();
+
+            lastResult.style.backgroundColor = "white";
+
+            randomNumber = Math.floor(Math.random() * 100) + 1;
+        }
+
+
+
+    </script>
+
+
+</body>
+
+
+
+</html>

@@ -7,6 +7,13 @@
     <title>My test page</title>
     <link href="styles/style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <meta name="description" content="The MDN Web Docs site
+  provides information about Open Web technologies
+  including HTML, CSS, and APIs for both Web sites and
+  progressive web apps." />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+        href="https://developer.mozilla.org/static/img/favicon114.png" />
+
 </head>
 
 <body>
@@ -24,13 +31,50 @@
         <li>builders</li>
     </ul>
 
+    <a href="./textpage/index.html">To link textpage</a>
+
     <p>working together…</p>
     <a href="https://www.mozilla.org/zh-CN/about/manifesto/">Mozilla Manifesto</a>
     <br>
-    <button>切换用户</button>
+    <button class="button">切换用户</button>
+
+    <p>Japanese example: <span lang="ja">ご飯が熱い。</span>.</p>
+    <svg version="1.1" baseProfile="full" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100%" height="100%" fill="black" />
+        <circle cx="150" cy="100" r="90" fill="blue" />
+    </svg>
+
+    <svg width="100%" height="100%">
+        <rect width="100%" height="100%" fill="red" />
+        <circle cx="100%" cy="100%" r="150" fill="blue" stroke="black" />
+        <polygon points="120,0 240,225 0,225" fill="green" />
+        <text x="50" y="100" font-family="Verdana" font-size="55" fill="white" stroke="black" stroke-width="2">
+            Hello!
+        </text>
+    </svg>
+
+    <picture>
+        <source media="(max-width: 799px)" srcset="./images/2.webp" />
+        <source media="(min-width: 800px)" srcset="./images/1.webp" />
+        <img src="./images/1.webp" alt="Chris standing up holding his daughter Elva" />
+    </picture>
+
+    <div class="wrapper">
+        <div class="box1">One</div>
+        <div class="box2">Two</div>
+        <div class="box3">Three</div>
+    </div>
+
+    <li><a href="./bouncing-balls-start/index.html">小球</a></li>
 
 
-    <script src="scripts/main.js" defer></script>
+
+
+
+    <script src="scripts/main.js" defer>
+
+
+    </script>
 </body>
 
 </html>
